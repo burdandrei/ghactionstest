@@ -22,7 +22,7 @@ jobs:
         permissions:
             contents: read
             id-token: write
-  # This workflow contains a single job called "build"
+ # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -37,7 +37,6 @@ jobs:
         uses: hashicorp/vault-action@v2.7.4
         with:
           url: https://vault-cluster-public-vault-51478d9d.252109cc.z1.hashicorp.cloud:8200
-          #token: ${{ secrets.VAULT_TOKEN }}
           namespace: admin
           method: jwt
           jwtGithubAudience: sigstore # set the GitHub token's aud claim
