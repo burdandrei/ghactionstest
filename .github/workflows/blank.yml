@@ -44,6 +44,7 @@ jobs:
           namespace: admin
           method: jwt
           role: demo
+          jwtGithubAudience: aud # set the GitHub token's aud claim
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
             secret/data/ci npm_token
