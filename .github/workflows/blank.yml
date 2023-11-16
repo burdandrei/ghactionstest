@@ -50,4 +50,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          env | sort
+          echo $AWS_ACCESS_KEY_ID
+          echo $NPM_TOKEN
