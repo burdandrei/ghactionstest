@@ -31,8 +31,9 @@ jobs:
       - name: HashiCorp Vault
         uses: hashicorp/vault-action@v2.7.4
         with:
-          url: https://vault.mycompany.com:8200
+          url: https://vault-cluster-public-vault-51478d9d.252109cc.z1.hashicorp.cloud:8200
           token: ${{ secrets.VAULT_TOKEN }}
+          namespace: admin
           caCertificate: ${{ secrets.VAULT_CA_CERT }}
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
