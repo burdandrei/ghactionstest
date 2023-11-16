@@ -17,6 +17,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+# workflow needs permissions to read contents and write the ID token.
+    retrieve-secret:
+        permissions:
+            contents: read
+            id-token: write
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -32,9 +37,10 @@ jobs:
         uses: hashicorp/vault-action@v2.7.4
         with:
           url: https://vault-cluster-public-vault-51478d9d.252109cc.z1.hashicorp.cloud:8200
-          token: ${{ secrets.VAULT_TOKEN }}
+          #token: ${{ secrets.VAULT_TOKEN }}
           namespace: admin
-          caCertificate: ${{ secrets.VAULT_CA_CERT }}
+          method: jwt
+          jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
             secret/data/ci npm_token
