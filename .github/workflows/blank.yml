@@ -30,6 +30,14 @@ jobs:
       # Vault
       - name: HashiCorp Vault
         uses: hashicorp/vault-action@v2.7.4
+        with:
+          url: https://vault.mycompany.com:8200
+          token: ${{ secrets.VAULT_TOKEN }}
+          caCertificate: ${{ secrets.VAULT_CA_CERT }}
+          secrets: |
+            secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
+            secret/data/ci npm_token
+
             
 
       # Runs a single command using the runners shell
@@ -41,3 +49,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          env | sort
