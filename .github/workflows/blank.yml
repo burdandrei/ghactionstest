@@ -35,6 +35,7 @@ jobs:
           url: https://vault-cluster-public-vault-51478d9d.252109cc.z1.hashicorp.cloud:8200
           namespace: admin
           method: jwt
+          role: demo
           jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
