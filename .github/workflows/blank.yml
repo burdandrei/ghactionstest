@@ -44,8 +44,8 @@ jobs:
           method: jwt
           role: myproject-production
           secrets: |
-            secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
-            secret/data/ci npm_token
+            secret/data/production/aws accessKey | AWS_ACCESS_KEY_ID ;
+            secret/data/production/ci npm_token
 
             
 
