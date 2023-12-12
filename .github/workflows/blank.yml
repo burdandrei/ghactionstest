@@ -43,6 +43,7 @@ jobs:
           url: https://v.aburd.sbx.hashidemos.io:8200
           method: jwt
           role: myproject-production
+          jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
             secret/data/ci npm_token
