@@ -40,11 +40,9 @@ jobs:
       - name: HashiCorp Vault
         uses: hashicorp/vault-action@v2.7.4
         with:
-          url: https://vault-cluster-public-vault-51478d9d.252109cc.z1.hashicorp.cloud:8200
-          namespace: admin
+          url: https://v.aburd.sbx.hashidemos.io:8200
           method: jwt
-          role: demo
-          jwtGithubAudience: sigstore # set the GitHub token's aud claim
+          role: myproject-production
           secrets: |
             secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
             secret/data/ci npm_token
