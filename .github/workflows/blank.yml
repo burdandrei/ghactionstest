@@ -42,7 +42,7 @@ jobs:
           url: https://vault-cluster-public-vault-c0d1161d.4b1084e1.z1.hashicorp.cloud:8200
           namespace: admin
           method: jwt
-          role: myproject-production
+          role: myproject-preprod
           secrets: |
             secret/data/production/aws accessKey | AWS_ACCESS_KEY_ID ;
             secret/data/production/ci npm_token
